@@ -1,0 +1,88 @@
+;; Object Downloads/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Downloads/"
+  :tables
+  (list
+    (semanticdb-table "sv.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("sys/types.h" include (:system-flag t) nil [263 285])
+            ("sys/socket.h" include (:system-flag t) nil [286 309])
+            ("sys/param.h" include (:system-flag t) nil [310 332])
+            ("netinet/in.h" include (:system-flag t) nil [333 356])
+            ("sys/time.h" include (:system-flag t) nil [357 378])
+            ("string.h" include (:system-flag t) nil [379 398])
+            ("stdio.h" include (:system-flag t) nil [399 417])
+            ("sys/stat.h" include (:system-flag t) nil [418 439])
+            ("signal.h" include (:system-flag t) nil [440 459])
+            ("errno.h" include (:system-flag t) nil [460 478])
+            ("fcntl.h" include (:system-flag t) nil [479 497])
+            ("unistd.h" include (:system-flag t) nil [498 517])
+            ("stdlib.h" include (:system-flag t) nil [518 537])
+            ("NO_CLI" variable (:constant-flag t) nil [546 552])
+            ("clitab" variable
+               (:dereference 1
+                :type ("info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [556 742])
+            ("info" type
+               (:members 
+                  ( ("flag" variable (:type "int") (reparse-symbol classsubparts) [628 637])
+                    ("saddr" variable (:type ("sockaddr_in" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [639 664]))                  
+                :type "struct")
+                nil [556 742])
+            ("clino" variable (:type "int") nil [743 753])
+            ("cldhandler" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("sig" variable (:type "int") (reparse-symbol arg-sub-list) [824 832]))                  
+                :type "void")
+                nil [808 833])
+            ("tcpserv" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("newsock" variable (:type "int") (reparse-symbol arg-sub-list) [970 982]))                  
+                :type "int")
+                nil [958 983])
+            ("udpserv" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("sockfd" variable (:type "int") (reparse-symbol arg-sub-list) [1022 1033]))                  
+                :type "int")
+                nil [1010 1034])
+            ("tolog" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("string" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1072 1085]))                  
+                :type "void")
+                nil [1061 1086])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") nil nil)
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        nil nil))                  
+                :type "int")
+                nil [1111 3764]))          
+      :file "sv.c"
+      :pointmax 3765
+      :fsize 3764
+      :lastmodtime '(19458 59960 0 0)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("NO_CLI" . ((number "5" 553 . 554)))
+          )
+))
+  :file "!home!marcin!Downloads!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,18 @@
+;; Object Facebook Hacker Cup 2015/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Facebook Hacker Cup 2015/"
+  :tables
+  (list
+    (semanticdb-table "cooking_the_books.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("sys" include nil nil [23 33])
+            ("with" code nil nil [36 115]))          
+      :file "cooking_the_books.py"
+      :pointmax 115
+      :fsize 114
+      :lastmodtime '(21680 7156 803237 917000)
+      :unmatched-syntax nil))
+  :file "!home!marcin!Facebook Hacker Cup 2015!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

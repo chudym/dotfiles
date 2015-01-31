@@ -1,0 +1,328 @@
+;; Object marcin/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "marcin/"
+  :tables
+  (list
+    (semanticdb-table "lab2.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("sys/types.h" include (:system-flag t) nil [18 40])
+            ("sys/wait.h" include (:system-flag t) nil [41 62])
+            ("unistd.h" include (:system-flag t) nil [63 82])
+            ("stdio.h" include (:system-flag t) nil [83 101])
+            ("stdlib.h" include (:system-flag t) nil [102 121])
+            ("pwd.h" include (:system-flag t) nil [122 138])
+            ("errno.h" include (:system-flag t) nil [139 157])
+            ("string.h" include (:system-flag t) nil [158 177])
+            ("signal.h" include (:system-flag t) nil [178 197])
+            ("time.h" include (:system-flag t) nil [198 215])
+            ("pthread.h" include (:system-flag t) nil [216 236])
+            ("MAX_THREADS" variable
+               (:constant-flag t
+                :default-value "10"
+                :type "int")
+                nil [238 265])
+            ("CURR_THREADS" variable
+               (:default-value "0"
+                :type "int")
+                nil [266 304])
+            ("ALL_THREADS" variable
+               (:default-value "0"
+                :type "int")
+                nil [266 304])
+            ("OLD" variable
+               (:default-value "0"
+                :type "int")
+                nil [305 317])
+            ("NEW" variable
+               (:default-value "0"
+                :type "int")
+                nil [318 330])
+            ("end" variable
+               (:default-value "0"
+                :type "int")
+                nil [331 343])
+            ("tid" variable
+               (:pointer 1
+                :type ("pthread_t" type (:type "class") nil nil))
+                nil [344 359])
+            ("set" variable (:type ("sigset_t" type (:type "class") nil nil)) nil [360 373])
+            ("thread" function
+               (:pointer 1
+                :arguments 
+                  ( ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [387 397]))                  
+                :type "void")
+                nil [374 859])
+            ("odbierzSIGUSR1" function
+               (:arguments 
+                  ( ("s" variable (:type "int") (reparse-symbol arg-sub-list) [880 886]))                  
+                :type "void")
+                nil [860 950])
+            ("odbierzINT" function
+               (:arguments 
+                  ( ("s" variable (:type "int") (reparse-symbol arg-sub-list) [967 973]))                  
+                :type "void")
+                nil [951 1339])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [1349 1358])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1359 1372]))                  
+                :type "int")
+                nil [1340 1823]))          
+      :file "lab2.c"
+      :pointmax 1824
+      :fsize 1824
+      :lastmodtime '(21682 46492 932205 630000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semtool.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [496 514])
+            ("ctype.h" include (:system-flag t) nil [515 533])
+            ("stdlib.h" include (:system-flag t) nil [534 553])
+            ("sys/types.h" include (:system-flag t) nil [554 576])
+            ("sys/ipc.h" include (:system-flag t) nil [577 597])
+            ("sys/sem.h" include (:system-flag t) nil [598 618])
+            ("semun" type
+               (:members 
+                  ( ("val" variable (:type "int") (reparse-symbol classsubparts) [634 642])
+                    ("buf" variable
+                       (:pointer 1
+                        :type ("semid_ds" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [684 705])
+                    ("array" variable
+                       (:pointer 1
+                        :type "unsigned short")
+                        (reparse-symbol classsubparts) [746 768])
+                    ("__buf" variable
+                       (:pointer 1
+                        :type ("seminfo" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [865 887]))                  
+                :type "union")
+                nil [619 919])
+            ("SEMMSL" variable (:constant-flag t) nil [928 934])
+            ("SEM_RESOURCE_MAX" variable (:constant-flag t) nil [945 961])
+            ("opensem" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("sid" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [1029 1038])
+                    ("key" variable (:type ("key_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1039 1049]))                  
+                :type "void")
+                nil [1016 1050])
+            ("createsem" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("sid" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [1066 1075])
+                    ("key" variable (:type ("key_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1076 1086])
+                    ("members" variable (:type "int") (reparse-symbol arg-sub-list) [1087 1099]))                  
+                :type "void")
+                nil [1051 1100])
+            ("locksem" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("sid" variable (:type "int") (reparse-symbol arg-sub-list) [1114 1122])
+                    ("member" variable (:type "int") (reparse-symbol arg-sub-list) [1123 1134]))                  
+                :type "void")
+                nil [1101 1135])
+            ("unlocksem" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("sid" variable (:type "int") (reparse-symbol arg-sub-list) [1151 1159])
+                    ("member" variable (:type "int") (reparse-symbol arg-sub-list) [1160 1171]))                  
+                :type "void")
+                nil [1136 1172])
+            ("removesem" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("sid" variable (:type "int") (reparse-symbol arg-sub-list) [1188 1196]))                  
+                :type "void")
+                nil [1173 1197])
+            ("get_member_count" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("sid" variable (:type "int") (reparse-symbol arg-sub-list) [1230 1238]))                  
+                :type "unsigned short")
+                nil [1198 1239])
+            ("getval" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("sid" variable (:type "int") (reparse-symbol arg-sub-list) [1251 1259])
+                    ("member" variable (:type "int") (reparse-symbol arg-sub-list) [1260 1271]))                  
+                :type "int")
+                nil [1240 1272])
+            ("dispval" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("sid" variable (:type "int") (reparse-symbol arg-sub-list) [1286 1294])
+                    ("member" variable (:type "int") (reparse-symbol arg-sub-list) [1295 1306]))                  
+                :type "void")
+                nil [1273 1307])
+            ("changemode" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("sid" variable (:type "int") (reparse-symbol arg-sub-list) [1324 1332])
+                    ("mode" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1333 1344]))                  
+                :type "void")
+                nil [1308 1345])
+            ("usage" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1357 1362]))                  
+                :type "void")
+                nil [1346 1363])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [1374 1383])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1384 1397]))                  
+                :type "int")
+                nil [1365 2604])
+            ("opensem" function
+               (:arguments 
+                  ( ("sid" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [2619 2628])
+                    ("key" variable (:type ("key_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2629 2639]))                  
+                :type "void")
+                nil [2606 2851])
+            ("createsem" function
+               (:arguments 
+                  ( ("sid" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [2868 2877])
+                    ("key" variable (:type ("key_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2878 2888])
+                    ("members" variable (:type "int") (reparse-symbol arg-sub-list) [2889 2901]))                  
+                :type "void")
+                nil [2853 3725])
+            ("locksem" function
+               (:arguments 
+                  ( ("sid" variable (:type "int") (reparse-symbol arg-sub-list) [3740 3748])
+                    ("member" variable (:type "int") (reparse-symbol arg-sub-list) [3749 3760]))                  
+                :type "void")
+                nil [3727 4513])
+            ("unlocksem" function
+               (:arguments 
+                  ( ("sid" variable (:type "int") (reparse-symbol arg-sub-list) [4530 4538])
+                    ("member" variable (:type "int") (reparse-symbol arg-sub-list) [4539 4550]))                  
+                :type "void")
+                nil [4515 5387])
+            ("removesem" function
+               (:arguments 
+                  ( ("sid" variable (:type "int") (reparse-symbol arg-sub-list) [5404 5412]))                  
+                :type "void")
+                nil [5389 5492])
+            ("get_member_count" function
+               (:arguments 
+                  ( ("sid" variable (:type "int") (reparse-symbol arg-sub-list) [5526 5534]))                  
+                :type "unsigned short")
+                nil [5494 5830])
+            ("getval" function
+               (:arguments 
+                  ( ("sid" variable (:type "int") (reparse-symbol arg-sub-list) [5843 5851])
+                    ("member" variable (:type "int") (reparse-symbol arg-sub-list) [5852 5863]))                  
+                :type "int")
+                nil [5832 5961])
+            ("changemode" function
+               (:arguments 
+                  ( ("sid" variable (:type "int") (reparse-symbol arg-sub-list) [5979 5987])
+                    ("mode" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5988 5999]))                  
+                :type "void")
+                nil [5963 6217])
+            ("usage" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6230 6235]))                  
+                :type "void")
+                nil [6219 6648]))          
+      :file "semtool.c"
+      :pointmax 6649
+      :fsize 6648
+      :lastmodtime '(21682 48422 242122 288000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("SEMMSL" . ((number "5" 935 . 936)))
+          ("SEM_RESOURCE_MAX" . ((number "1" 969 . 970)))
+          )
+)
+    (semanticdb-table "Makefile"
+      :major-mode 'makefile-gmake-mode
+      :tags 
+        '( ("all" function nil nil [1 38]))          
+      :file "Makefile"
+      :pointmax 38
+      :fsize 37
+      :lastmodtime '(21682 47202 602174 968000)
+      :unmatched-syntax '((shell-command 7 . 37) (bol 6 . 6)))
+    (semanticdb-table "mrecv1.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_GNU_SOURCE" variable (:constant-flag t) nil [143 154])
+            ("unistd.h" include (:system-flag t) nil [156 175])
+            ("TEMP_FAILURE_RETRY" variable (:constant-flag t) nil [211 229])
+            ("stdio.h" include (:system-flag t) nil [511 529])
+            ("stdlib.h" include (:system-flag t) nil [530 549])
+            ("sys/types.h" include (:system-flag t) nil [550 572])
+            ("sys/ipc.h" include (:system-flag t) nil [573 593])
+            ("sys/msg.h" include (:system-flag t) nil [594 614])
+            ("sys/stat.h" include (:system-flag t) nil [615 636])
+            ("fcntl.h" include (:system-flag t) nil [637 655])
+            ("errno.h" include (:system-flag t) nil [656 674])
+            ("msendrcv.h" include nil nil [675 696])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [707 716])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [717 729]))                  
+                :type "int")
+                nil [698 1047]))          
+      :file "mrecv1.c"
+      :pointmax 1049
+      :fsize 1048
+      :lastmodtime '(21644 25608 234553 233000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("_GNU_SOURCE")
+          ("TEMP_FAILURE_RETRY" (spp-arg-list ("expression") 229 . 241) . ((semantic-list "(({ long int __result;                                                     \\
+       do __result = (long int) (expression);                                 \\
+       while (__result == -1L && errno == EINTR);                             \\
+       __result; }))" 246 . 503)))
+          )
+)
+    (semanticdb-table "msendrcv.h"
+      :file "msendrcv.h"
+      :fsize 122
+      :lastmodtime '(21644 25255 94568 488000)))
+  :file "!home!marcin!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
