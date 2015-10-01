@@ -1,4 +1,12 @@
-((("package-initialize" .
+((("val" .
+   [1 0 0])
+  ("fprintf" .
+   [0 0 0 0 1 0 0])
+  ("mysemds" .
+   [0 0 0 0 0 1 0])
+  ("semopts" .
+   [4 0 0 1 0 0 1])
+  ("package-initialize" .
    [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
   ("syscall.h" .
    [1 0 0 1 0 0 0 0 0])
@@ -13,9 +21,9 @@
   ("n" .
    [1])
   ("printf" .
-   [1 0 0 0 0 0])
+   [1 0 0 0 0 1])
   ("for" .
-   [1 0 0])
+   [2 0 0])
   ("require" .
    [0 0 0 0 0 1 0])
   ("iedit-mode" .

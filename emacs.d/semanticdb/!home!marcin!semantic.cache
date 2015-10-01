@@ -242,29 +242,29 @@
                (:arguments 
                   ( ("sid" variable (:type "int") (reparse-symbol arg-sub-list) [5526 5534]))                  
                 :type "unsigned short")
-                nil [5494 5830])
+                nil [5494 5861])
             ("getval" function
                (:arguments 
-                  ( ("sid" variable (:type "int") (reparse-symbol arg-sub-list) [5843 5851])
-                    ("member" variable (:type "int") (reparse-symbol arg-sub-list) [5852 5863]))                  
+                  ( ("sid" variable (:type "int") (reparse-symbol arg-sub-list) [5874 5882])
+                    ("member" variable (:type "int") (reparse-symbol arg-sub-list) [5883 5894]))                  
                 :type "int")
-                nil [5832 5961])
+                nil [5863 5992])
             ("changemode" function
                (:arguments 
-                  ( ("sid" variable (:type "int") (reparse-symbol arg-sub-list) [5979 5987])
+                  ( ("sid" variable (:type "int") (reparse-symbol arg-sub-list) [6010 6018])
                     ("mode" variable
                        (:pointer 1
                         :type "char")
-                        (reparse-symbol arg-sub-list) [5988 5999]))                  
+                        (reparse-symbol arg-sub-list) [6019 6030]))                  
                 :type "void")
-                nil [5963 6217])
+                nil [5994 6248])
             ("usage" function
                (:arguments 
-                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6230 6235]))                  
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6261 6266]))                  
                 :type "void")
-                nil [6219 6648]))          
+                nil [6250 6679]))          
       :file "semtool.c"
-      :pointmax 6649
+      :pointmax 6680
       :fsize 6648
       :lastmodtime '(21682 48422 242122 288000)
       :unmatched-syntax nil
@@ -322,7 +322,17 @@
     (semanticdb-table "msendrcv.h"
       :file "msendrcv.h"
       :fsize 122
-      :lastmodtime '(21644 25255 94568 488000)))
+      :lastmodtime '(21644 25255 94568 488000))
+    (semanticdb-table "test.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("print" code nil nil [1 15])
+            ("print" code nil nil [16 48]))          
+      :file "test.py"
+      :pointmax 54
+      :fsize 51
+      :lastmodtime '(21712 41891 240283 991000)
+      :unmatched-syntax '((NAME 49 . 50) ($EOI 54 . 54) ($EOI 55 . 55) ($EOI 52 . 52))))
   :file "!home!marcin!semantic.cache"
   :semantic-tag-version "2.0"
   :semanticdb-version "2.2")
