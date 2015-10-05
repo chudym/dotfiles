@@ -1,13 +1,10 @@
 set nocompatible
 filetype off
 
-let mapleader=","
-
 set noshowmode
 set number 
 set showcmd 
 set ruler
-au BufRead,BufNewFile *.asm set filetype=nasm
 set noswapfile
 set nobackup
 set nowb
@@ -35,7 +32,15 @@ set colorcolumn=100
 highlight ColorColumn ctermbg=233
 
 
-"""""""Plugins"""""""
+"Vundle
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
+
+"Base plugin, required
+Plugin 'VundleVim/Vundle.vim'
+
+"Custom plugins
 
 
-
+call vundle#end()
+filetype plugin indent on
