@@ -34,6 +34,7 @@ set timeoutlen=50
 set t_Co=256
 syntax on
 set background=dark
+colorscheme jellybeans
 
 "Underlines the current line in insert mode
 "autocmd InsertEnter * set cul
