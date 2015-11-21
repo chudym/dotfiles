@@ -40,7 +40,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 "Custom plugins
-
+Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
 filetype plugin indent on
