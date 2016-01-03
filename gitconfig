@@ -1,0 +1,28 @@
+[core]
+	editor = vim
+
+[user]
+	name = Marcin Chudy
+	email = marcinchudy94@gmail.com
+
+[push]
+	default = simple
+
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    pager = true
+    ui = true
+
+[alias]
+    aa = add -A
+    co = checkout
+    cob = checkout -b
+    st = status
+    cm = commit -m
+    ca = !git add -A && git commit -m
+    aliases = "!git config -l | grep alias | cut -c 7-"
+    lg = "log --color --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) %s %C(green)(%cr)%C(bold blue) [%an]%Creset %C(bold red)%d%Creset'"
+    lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+    lg3 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
