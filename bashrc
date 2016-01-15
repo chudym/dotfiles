@@ -10,6 +10,13 @@
 # past this point for scp and rcp, and it's important to refrain from
 # outputting anything in those cases.
 
+for file in ~/.{aliases,functions}; do
+    echo [ -f "$file" ]
+    [ -r "$file" ] && source "$file";
+done;
+source ~/.aliases
+unset file;
+
 # If not running interactively, don't do anything!
 [[ $- != *i* ]] && return
 

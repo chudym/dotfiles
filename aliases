@@ -1,0 +1,15 @@
+# Navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# ls 
+alias ls="ls --color=auto"
+alias ll="ls -l"
+alias la="ls -lA"
+
+alias mkdir="mkdir -p"
+
+alias myip="curl -s http://whatismyip.akamai.com && echo"
+

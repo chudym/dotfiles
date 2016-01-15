@@ -5,7 +5,7 @@ success() { echo "$(tput setaf 2)DONE$(tput sgr0)"; }
 dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo $dir
 olddir=~/dotfiles_old
-files="bashrc vimrc vim emacs gitconfig"
+files="bashrc vimrc vim emacs gitconfig aliases"
 
 echo -n 'Updating submodules...'
 git submodule init
