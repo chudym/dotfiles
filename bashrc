@@ -1,17 +1,7 @@
 # /etc/bash.bashrc
 #
-# https://wiki.archlinux.org/index.php/Color_Bash_Prompt
-#
-# This file is sourced by all *interactive* bash shells on startup,
-# including some apparently interactive shells such as scp and rcp
-# that can't tolerate any output. So make sure this doesn't display
-# anything or bad things will happen !
-# est for an interactive shell. There is no need to set anything
-# past this point for scp and rcp, and it's important to refrain from
-# outputting anything in those cases.
 
 for file in ~/.{aliases,functions}; do
-    echo [ -f "$file" ]
     [ -r "$file" ] && source "$file";
 done;
 source ~/.aliases
@@ -37,13 +27,6 @@ case ${TERM} in
 		PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033_%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/~}"'
 		;;
 esac
-
-# fortune is a simple program that displays a pseudorandom message
-# from a database of quotations at logon and/or logout.
-# If you wish to use it, please install "fortune-mod" from the
-# official repositories, then uncomment the following line:
-
-# [[ "$PS1" ]] && /usr/bin/fortune
 
 # Set colorful PS1 only on colorful terminals.
 # dircolors --print-database uses its own built-in database
@@ -98,12 +81,7 @@ PS2="> "
 PS3="> "
 PS4="+ "
 
-# Try to keep environment pollution down, EPA loves us.
 unset safe_term match_lhs
 
-# Try to enable the auto-completion (type: "pacman -S bash-completion" to install it).
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
-# Try to enable the "Command not found" hook ("pacman -S pkgfile" to install it).
-# See also: https://wiki.archlinux.org/index.php/Bash#The_.22command_not_found.22_hook
-[ -r /usr/share/doc/pkgfile/command-not-found.bash ] && . /usr/share/doc/pkgfile/command-not-found.bash
