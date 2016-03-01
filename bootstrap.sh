@@ -27,3 +27,7 @@ success
 echo -n "Installing vim plugins... "
 vim +PluginInstall +qall
 success
+
+echo -n "Installing fonts... "
+fonts/powerline/install.sh
+success
