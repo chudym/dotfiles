@@ -46,6 +46,10 @@ highlight ColorColumn ctermbg=233
 "Mappings
 let mapleader=","
 
+"Clean search highlighting on escape
+nnoremap <esc> :noh<return><esc>
+nnoremap <esc>^[ <esc>^[
+
 "Vundle
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
