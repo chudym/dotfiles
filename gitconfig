@@ -24,6 +24,13 @@
     st = status
     cm = commit -m
     ca = !git add -A && git commit -m
+    cp = cherry-pick
+    cma = commit --amend
+    find = "!git ls-files | grep -i"
+    lasttag = describe --tags --abbrev=0
+    sl = stash list 
+    sa = stash apply
+    ss = stash save
     
     # branches
     branch-name = "!git rev-parse --abbrev-ref HEAD"
@@ -32,11 +39,11 @@
     delete-merged = '!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
     ours = "!f() { git co --ours $@ && git add $@; }; f"
-    theirs = "!f() { git co --theirs $@ && git add $@; } f"
+    theirs = "!f() { git co --theirs $@ && git add $@; }; f"
 
     assume = update-index --assume-unchanged
     unassume = update-index --no-assume-unchanged
-    assumed "!git ls-files -v | grep ^h | cut -c 3-"
+    assumed = "!git ls-files -v | grep ^h | cut -c 3-"
 
     aliases = "!git config -l | grep alias | cut -c 7-"
 
