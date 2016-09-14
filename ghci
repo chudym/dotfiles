@@ -1,0 +1,6 @@
+:def hoogle \x -> return $ ":!hoogle --color --count=20 \"" ++ x ++ "\""
+
+:set prompt "\ESC[1;94mλ> \ESC[m"
+:set editor vim
+
+:set -Wall

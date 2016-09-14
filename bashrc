@@ -59,7 +59,7 @@ if [[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] ; then
 
 
 	# Use this other PS1 string if you want \W for t and \w for all other sers:
-	PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h\[\033[01;34m\]\w'; else echo '\[\033[01;32m\]\u@\h\[\033[01;34m\] \w'; fi) \$([[ \$? != 0 ]] && echo \"\[\033[01;31m\]\[\033[01;34m\] \")\\$\[\033[00m\] "
+    PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h\[\033[01;34m\]\w\W$(__git_ps1 "(%s)")]\$'; else echo '\[\033[01;32m\]\u@\h\[\033[01;34m\] \w'; fi) \$([[ \$? != 0 ]] && echo \"\[\033[01;31m\]\[\033[01;34m\] \")\\$\[\033[00m\] "
 
 	alias ls="ls --color=auto"
 	alias dir="dir --color=auto"
