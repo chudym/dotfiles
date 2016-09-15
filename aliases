@@ -9,6 +9,10 @@ alias ls="ls --color=auto"
 alias ll="ls -l"
 alias la="ls -lA"
 
+alias dir="dir --color=auto"
+alias grep="grep --color=auto"
+alias dmesg='dmesg --color'
+
 alias mkdir="mkdir -p"
 
 alias myip="curl -s http://whatismyip.akamai.com && echo"

@@ -108,10 +108,10 @@ let g:neocomplete#force_omni_input_patterns.cpp =
     \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 
 "ghc-mod
-map <silent> tw :GhcModTypeInsert<CR>
-map <silent> ts :GhcModSplitFunCase<CR>
-map <silent> tq :GhcModType<CR>
-map <silent> te :GhcModTypeClear<CR>
+map  tw :GhcModTypeInsert<CR>
+map  ts :GhcModSplitFunCase<CR>
+map  tq :GhcModType<CR>
+map  te :GhcModTypeClear<CR>
 
 "supertab
 let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
