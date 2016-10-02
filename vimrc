@@ -29,7 +29,7 @@ set expandtab
 set laststatus=2
 
 "Prevents a pause when leaving insert mode
-set timeoutlen=50
+set ttimeoutlen=0
 
 set t_Co=256
 syntax on
@@ -108,10 +108,10 @@ let g:neocomplete#force_omni_input_patterns.cpp =
     \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 
 "ghc-mod
-map  tw :GhcModTypeInsert<CR>
-map  ts :GhcModSplitFunCase<CR>
-map  tq :GhcModType<CR>
-map  te :GhcModTypeClear<CR>
+map <silent> tw :GhcModTypeInsert<CR>
+map <silent> ts :GhcModSplitFunCase<CR>
+map <silent> tq :GhcModType<CR>
+map <silent> te :GhcModTypeClear<CR>
 
 "supertab
 let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
