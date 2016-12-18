@@ -16,4 +16,3 @@ alias dmesg='dmesg --color'
 alias mkdir="mkdir -p"
 
 alias myip="curl -s http://whatismyip.akamai.com && echo"
-

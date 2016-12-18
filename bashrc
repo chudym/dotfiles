@@ -1,78 +1,95 @@
-# /etc/bash.bashrc
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+HISTSIZE=100000
+HISTFILESIZE=200000
+HISTCONTROL=ignoredups
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# set variable identifying the chroot you work in (used in the prompt below)    
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then               
+    debian_chroot=$(cat /etc/debian_chroot)                                     
+fi   
+
+RED="$(tput setaf 1 2>/dev/null || echo '\e[0;31m')" 
+GREEN="$(tput setaf 2 2>/dev/null || echo '\e[0;32m')" 
+YELLOW="$(tput setaf 3 2>/dev/null || echo '\e[0;33m')" 
+BLUE="$(tput setaf 4 2>/dev/null || echo '\e[0;34m')"
+PURPLE="$(tput setaf 5 2>/dev/null || echo '\e[0;35m')" 
+CYAN="$(tput setaf 6 2>/dev/null || echo '\e[0;36m')"
+RESET="$(tput sgr 0 2>/dev/null || echo '\e[0m')"
+
+find_git_branch() {
+  # Based on: http://stackoverflow.com/a/13003854/170413
+  local branch
+  if branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null); then
+    if [[ "$branch" == "HEAD" ]]; then
+      branch=' detached*'
+    fi
+    git_branch=" ($branch)"
+  else
+    git_branch=""
+  fi
+}
+
+find_git_dirty() {
+  local status=$(git status --porcelain 2> /dev/null)
+  if [[ "$status" != "" ]]; then
+    git_prompt="${RED}${git_branch}"
+  else
+    git_prompt="${GREEN}${git_branch}"
+  fi
+}
+
+PROMPT_COMMAND="find_git_branch; find_git_dirty; $PROMPT_COMMAND"
+
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
+
+force_color_prompt=yes
+
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	color_prompt=yes
+    else
+	color_prompt=
+    fi
+fi
+
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w${git_prompt}\[$RESET\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt force_color_prompt
+
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+
+# load custom aliases and functions
 for file in ~/.{aliases,functions}; do
     [ -r "$file" ] && source "$file";
 done;
 unset file;
 
-# If not running interactively, don't do anything!
-[[ $- != *i* ]] && return
-
-parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
-# Bash won't get SIGWINCH if another process is in the foreground.
-# Enable checkwinsize so that bash will check the terminal size when
-# it regains control.
-# http://cnswww.cns.cwru.edu/~chet/bash/FAQ (E11)
-shopt -s checkwinsize
-
-# Enable history appending instead of overwriting.
-shopt -s histappend
-
-case ${TERM} in
-	xterm*|rxvt*|Eterm|aterm|kterm|gnome*)
-		PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/~}"'
-		;;
-	screen)
-		PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033_%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/~}"'
-		;;
-esac
-
-# Set colorful PS1 only on colorful terminals.
-# dircolors --print-database uses its own built-in database
-# instead of using /etc/DIR_COLORS. Try to use the external file
-# first to take advantage of user additions. Use internal bash
-# globbing instead of external grep binary.
-
-# sanitize TERM:
-safe_term=${TERM//[^[:alnum:]]/?}
-match_lhs=""
-
-[[ -f ~/.dir_colors ]] && match_lhs="${match_lhs}$(<~/.dir_colors)"
-[[ -f /etc/DIR_COLORS ]] && match_lhs="${match_lhs}$(</etc/DIR_COLORS)"
-[[ -z ${match_lhs} ]] \
-	&& type -P dircolors >/dev/null \
-	&& match_lhs=$(dircolors --print-database)
-
-if [[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] ; then
-	
-	# we have colors :-)
-
-	# Enable colors for ls, etc. Prefer ~/.dir_colors
-	if type -P dircolors >/dev/null ; then
-		if [[ -f ~/.dir_colors ]] ; then
-			eval $(dircolors -b ~/.dir_colors)
-		elif [[ -f /etc/DIR_COLORS ]] ; then
-			eval $(dircolors -b /etc/DIR_COLORS)
-		fi
-	fi
-    
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;31m\]$(parse_git_branch)\[\033[01;34m\] \$\[\033[00m\] '
-
-else
-	PS1="\u@\h $(if [[ ${EUID} == 0 ]]; then echo '\W'; else echo '\w'; fi) \$([[ \$? != 0 ]] && echo \" \")\$ "
-fi
-
-PS2="> "
-PS3="> "
-PS4="+ "
-
 unset safe_term match_lhs
-
 
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
-PATH=$PATH:~/.local/bin
-export PATH
+eval "$(thefuck --alias)"
