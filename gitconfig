@@ -26,6 +26,7 @@
     ca = !git add -A && git commit -m
     cp = cherry-pick
     cma = commit --amend
+    cmad = commit --amend --date=now
     find = "!git ls-files | grep -i"
     lasttag = describe --tags --abbrev=0
     sl = stash list 
