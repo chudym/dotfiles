@@ -44,9 +44,9 @@ find_git_branch() {
 find_git_dirty() {
   local status=$(git status --porcelain 2> /dev/null)
   if [[ "$status" != "" ]]; then
-    git_prompt="${RED}${git_branch}"
+    git_prompt_color=$RED
   else
-    git_prompt="${GREEN}${git_branch}"
+    git_prompt_color=$GREEN
   fi
 }
 
@@ -67,7 +67,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w${git_prompt}\[$RESET\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[${git_prompt_color}\]${git_branch}\[$RESET\]$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
