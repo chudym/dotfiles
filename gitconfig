@@ -13,7 +13,7 @@
     diff = auto
     interactive = auto
     pager = true
-    ui = true
+	ui = auto
 
 [alias]
     # simple shortcuts

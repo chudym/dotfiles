@@ -31,10 +31,17 @@ set laststatus=2
 "Prevents a pause when leaving insert mode
 set ttimeoutlen=0
 
-set t_Co=256
+"set t_Co=256
 syntax on
 set background=dark
 colorscheme jellybeans
+
+if &term =~ '256color'
+  " disable Background Color Erase (BCE) so that color schemes
+  " render properly when inside 256-color tmux and GNU screen.
+  " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+  set t_ut=
+endif
 
 "Underlines the current line in insert mode
 "autocmd InsertEnter * set cul
