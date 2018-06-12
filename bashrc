@@ -92,4 +92,5 @@ unset safe_term match_lhs
 
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
-eval "$(thefuck --alias)"
+export ASPNETCORE_ENVIRONMENT=Development
+alias python=python3
