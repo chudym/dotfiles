@@ -6,7 +6,6 @@ _get_repo() {
 _build_url() {
   # shellcheck disable=SC2039
   local upstream origin branch repo pr_url target
-  inside_git_repo="$(git rev-parse --is-inside-work-tree 2>/dev/null)"
   upstream="$(git config --get remote.upstream.url)"
   origin="$(git config --get remote.origin.url)"
   branch="$(git symbolic-ref --short HEAD)"
@@ -29,6 +28,7 @@ _build_url() {
 # shellcheck disable=SC2039
 open-pr() {
   # shellcheck disable=SC2039
+  inside_git_repo="$(git rev-parse --is-inside-work-tree 2>/dev/null)"
   if ! [ "$inside_git_repo" ]; then
      echo "Not a git repository"
      return
