@@ -17,5 +17,6 @@ brew install coreutils htop wget
 brew install grep
 brew install openssh
 brew install screen
+brew install git
 
 brew cleanup
