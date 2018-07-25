@@ -9,7 +9,7 @@ files="bashrc vimrc vim emacs gitconfig aliases ghci zshrc git-open-pr.sh"
 
 echo -n 'Updating submodules...'
 git submodule init
-git submodule update --recursive
+git submodule update --recursive --progress
 success
 
 echo -n "Creating symlinks... "

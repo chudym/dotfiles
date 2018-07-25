@@ -1,5 +1,5 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export ZSH=/home/marcin/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="agnoster"
 ENABLE_CORRECTION="true"
@@ -14,3 +14,5 @@ export LANG=en_US.UTF-8
 export EDITOR='vim'
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 export ASPNETCORE_ENVIRONMENT=Development
+
+fpath=(/usr/local/share/zsh-completions $fpath)
