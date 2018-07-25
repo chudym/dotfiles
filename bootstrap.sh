@@ -12,6 +12,10 @@ git submodule init
 git submodule update --recursive --progress
 success
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    source ./osx_install.sh
+fi
+
 echo -n "Creating symlinks... "
 mkdir -p $olddir
 cd $dir
