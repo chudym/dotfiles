@@ -19,4 +19,6 @@ brew install openssh
 brew install screen
 brew install git
 
+brew install node
+
 brew cleanup

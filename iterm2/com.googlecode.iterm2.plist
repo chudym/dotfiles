@@ -230,7 +230,7 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles/iterm2</string>
+	<string>~/Downloads/iterm</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{1084, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -264,14 +264,25 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
+	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
+	<dict>
+		<key>TB Is Shown</key>
+		<integer>1</integer>
+	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>0 72 1680 821 0 0 1680 1027 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1026 548 599 459 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>568 548 796 473 0 0 1680 1027 </string>
+	<string>654 427 1016 512 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 541 837 486 0 0 1680 1027 </string>
+	<string>290 366 795 537 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>212 101 795 537 0 0 1680 1027 </string>
+	<key>NeverWarnAboutShortLivedSessions_58650183-F627-495F-B76E-73DDA352D5F5</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_58650183-F627-495F-B76E-73DDA352D5F5_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -562,13 +573,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.65582275390625</real>
+				<real>0.7064208984375</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.64537116865578459</real>
+				<real>0.69552940814349151</real>
 				<key>Red Component</key>
-				<real>0.55653269402682781</real>
+				<real>0.60295205377042294</real>
 			</dict>
 			<key>Guid</key>
 			<string>58650183-F627-495F-B76E-73DDA352D5F5</string>
@@ -640,6 +651,20 @@
 					<integer>11</integer>
 					<key>Text</key>
 					<string>0x7f</string>
+				</dict>
+				<key>0x7f-0x100000</key>
+				<dict>
+					<key>Action</key>
+					<integer>11</integer>
+					<key>Text</key>
+					<string>0x15</string>
+				</dict>
+				<key>0x7f-0x80000</key>
+				<dict>
+					<key>Action</key>
+					<integer>11</integer>
+					<key>Text</key>
+					<string>0x17</string>
 				</dict>
 				<key>0xf700-0x220000</key>
 				<dict>
@@ -721,9 +746,9 @@
 				<key>0xf702-0x280000</key>
 				<dict>
 					<key>Action</key>
-					<integer>11</integer>
+					<integer>10</integer>
 					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x44</string>
+					<string>b</string>
 				</dict>
 				<key>0xf703-0x220000</key>
 				<dict>
@@ -749,9 +774,9 @@
 				<key>0xf703-0x280000</key>
 				<dict>
 					<key>Action</key>
-					<integer>11</integer>
+					<integer>10</integer>
 					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x43</string>
+					<string>f</string>
 				</dict>
 				<key>0xf704-0x20000</key>
 				<dict>
@@ -963,16 +988,26 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>D2B4043F-51A9-4315-87C7-B78855D046DC</string>
+	<key>NoSyncLastTipTime</key>
+	<real>554488665.536286</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>1</integer>
+	<key>NoSyncPermissionToShowTip</key>
+	<true/>
 	<key>NoSyncReplaceProfileWarning</key>
 	<true/>
 	<key>NoSyncReplaceProfileWarning_selection</key>
 	<integer>0</integer>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>554155321.98942804</real>
+	<key>NoSyncTipsDisabled</key>
+	<true/>
+	<key>NoSyncTipsToNotShow</key>
+	<array>
+		<string>000</string>
+	</array>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1017,11 +1052,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-07-24T20:02:57Z</date>
+	<date>2018-07-29T20:04:51Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>WordCharacters</key>
-	<string>/-+\~_.</string>
+	<string></string>
 	<key>iTerm Version</key>
 	<string>3.1.7</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
